@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import ShimmerButton from "@/components/ui/shimmer-button";
+import { cn } from "@/lib/utils";
+import AnimatedGradientText from "../ui/animated-gradient-text";
 
 export function Hero() {
   return (
@@ -17,16 +20,24 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 space-y-8">
-            <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-              Revolutionize Your Study Habits with AI
+          <AnimatedGradientText>
+            <h1 className="md:text-7xl font-bold">
+            <span
+          className={cn(
+            `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+          )}
+        >Revolutionize Your Study Habits with AI</span>
             </h1>
+            </AnimatedGradientText>
             <p className="text-xl md:text-2xl text-muted-foreground">
               Chisei AI empowers students to learn smarter, not harder. Summarize notes, generate practice questions, and optimize your study schedule with the power of artificial intelligence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg bg-purple-600 hover:bg-purple-700">
-                Get Started Free
-              </Button>
+            <ShimmerButton className="shadow-2xl" background="#9333ea">
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    Get Started
+                </span>
+             </ShimmerButton>
               <Button size="lg" variant="outline" className="text-lg">
                 Watch Demo
               </Button>
@@ -48,4 +59,3 @@ export function Hero() {
     </section>
   )
 }
-
