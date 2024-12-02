@@ -87,7 +87,7 @@ export function Testimonials() {
     },
   ];
   return (
-    <section id="testimonials" className="py-24 bg-background">
+    <section id="testimonials" className="py-24 bg-background border-t border-purple-500/20">
   <div className="container mx-auto px-6 lg:px-12">
     <div className="flex flex-col lg:flex-row items-center gap-12">
       <div className="lg:w-1/2 space-y-12">

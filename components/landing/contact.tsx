@@ -25,7 +25,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-background/50">
+    <section id="contact" className="py-20 bg-background/50 border-t border-purple-500/20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Get in Touch</h2>
         <div className="max-w-2xl mx-auto">

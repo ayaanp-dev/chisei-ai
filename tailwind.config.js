@@ -68,7 +68,9 @@ module.exports = {
   			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
   			rainbow: 'rainbow var(--speed, 2s) infinite linear',
-  			gradient: 'gradient 8s linear infinite'
+  			gradient: 'gradient 8s linear infinite',
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+  			shine: 'shine var(--duration) infinite linear'
   		},
   		keyframes: {
   			'shimmer-slide': {
@@ -101,6 +103,22 @@ module.exports = {
   			gradient: {
   				to: {
   					backgroundPosition: 'var(--bg-size) 0'
+  				}
+  			},
+  			'border-beam': {
+  				'100%': {
+  					'offset-distance': '100%'
+  				}
+  			},
+  			shine: {
+  				'0%': {
+  					'background-position': '0% 0%'
+  				},
+  				'50%': {
+  					'background-position': '100% 100%'
+  				},
+  				to: {
+  					'background-position': '0% 0%'
   				}
   			}
   		}

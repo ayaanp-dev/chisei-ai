@@ -10,16 +10,6 @@ import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 export function Hero() {
   return (
     <section className="relative py-20 overflow-hidden bg-primary">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/placeholder.svg?height=600&width=1200"
-          alt="AI Study Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          className="opacity-10"
-        />
-      </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 space-y-8">
@@ -55,7 +45,7 @@ export function Hero() {
           <div className="lg:w-1/2">
             <div className="relative w-full aspect-square">
               <Image
-                src="/placeholder.svg?height=600&width=600"
+                src="/photos/study.jpg?&width=600"
                 alt="Chisei AI Interface"
                 layout="fill"
                 objectFit="contain"
