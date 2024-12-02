@@ -1,6 +1,36 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import Image from 'next/image';
+import AvatarCircles from "@/components/ui/avatar-circles";
 
 export function Testimonials() {
+
+  const avatars = [
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/16860528",
+      profileUrl: "https://github.com/dillionverma",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/20110627",
+      profileUrl: "https://github.com/tomonarifeehan",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/106103625",
+      profileUrl: "https://github.com/BankkRoll",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/59228569",
+      profileUrl: "https://github.com/safethecode",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/59442788",
+      profileUrl: "https://github.com/sanjay-mali",
+    },
+    {
+      imageUrl: "https://avatars.githubusercontent.com/u/89768406",
+      profileUrl: "https://github.com/itsarghyadas",
+    },
+  ];
+
   const testimonials = [
     {
       quote:
@@ -38,5 +68,24 @@ export function Testimonials() {
       src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
+  return (
+    <section id="testimonials" className="py-24 bg-background">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="lg:w-1/2 space-y-12">
+            <h2 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+              Testimonials
+            </h2>
+            <div className="flex flex-row mb-10 w-full">
+            <AvatarCircles numPeople={99} avatarUrls={avatars} />
+            <p>Used by hundreds of students worldwide.</p>
+            </div>
+          </div>
+          <div className="lg:w">
+            <AnimatedTestimonials testimonials={testimonials} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
