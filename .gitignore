@@ -44,3 +44,5 @@ __pycache__/
 
 # ai
 trained_models/
+*.gguf
+.cache/

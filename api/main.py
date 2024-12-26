@@ -1,11 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from transformers import pipeline
-from ai.summarization import TextSummarizer
+from ai.summarization.summarization import summarize
 
 app = FastAPI()
-
-summarizer = TextSummarizer()
 
 app.add_middleware(
     CORSMiddleware,
@@ -16,4 +14,4 @@ app.add_middleware(
 
 @app.get("/summarize/")
 def get_summary(text: str):
-    return summarizer.summarize(text)
+    return summarize(text)
