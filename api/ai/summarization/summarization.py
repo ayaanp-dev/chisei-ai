@@ -1,31 +1,18 @@
-import torch
-from transformers import AutoTokenizer, LongT5ForConditionalGeneration
+from ..utils import create_chat_completion
 
-tokenizer = AutoTokenizer.from_pretrained("google/long-t5-tglobal-base")
-model = LongT5ForConditionalGeneration.from_pretrained("google/long-t5-tglobal-base").to("cuda")
+# Define a function to summarize text specifically for notes and textbooks
+def summarize(text: str) -> str:
+    # Refined and academic-focused prompt for the model
+    prompt = (
+    "You are a helpful assistant specializing in summarizing academic material, such as notes and textbooks. "
+    "Your goal is to extract and present the main ideas, key concepts, and crucial details in a concise, clear, and organized manner. "
+    "Omit any unnecessary or irrelevant information, and focus on the most important takeaways. "
+    "If appropriate, use bullet points or numbered lists to highlight key points. "
+    "Ensure the summary is understandable and accessible for a general audience, avoiding overly technical language unless necessary.\n\n"
+    f"Text:\n{text}"
+    )
 
-def summarize_long_text(text, model, tokenizer, chunk_size=16384):
-    chunks = [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
-    summaries = []
-    
-    for chunk in chunks:
-        inputs = tokenizer(chunk, return_tensors="pt", max_length=chunk_size, truncation=True)
-        inputs = {key: value.to("cuda") for key, value in inputs.items()}
-        summary_ids = model.generate(inputs["input_ids"], max_length=1500, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)
-        summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
-        summaries.append(summary)
-    
-    combined_summary = " ".join(summaries)
-    final_summary = summarize_long_text(combined_summary, model, tokenizer)
-    
-    return final_summary
-
-def summarize(text: str):
-    if len(text) > 16384:
-        return summarize_long_text(text, model, tokenizer)
-    else:
-        inputs = tokenizer(text, return_tensors="pt", max_length=16384, truncation=True)
-        inputs = {key: value.to("cuda") for key, value in inputs.items()}
-        summary_ids = model.generate(inputs["input_ids"], max_length=1500, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)
-        summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
-        return summary
+    return create_chat_completion(
+        messages=[{"role": "system", "content": prompt}],
+        model="llama-3.3-70b-versatile"
+    )
