@@ -5,6 +5,7 @@ import { Testimonials } from "@/components/landing/testimonials"
 import { About } from "@/components/landing/about"
 import { Contact } from "@/components/landing/contact"
 import { Footer } from "@/components/footer"
+import { Bottom } from "@/components/landing/bottom"
 
 export default function LandingPage() {
   return (
@@ -14,8 +15,7 @@ export default function LandingPage() {
         <Hero />
         <Features />
         <Testimonials />
-        <About />
-        <Contact />
+        <Bottom />
       </main>
       <Footer />
     </div>

@@ -12,41 +12,41 @@ import Link from "next/link";
 export function Features() {
   const features = [
     {
-      title: "Track issues effectively",
+      title: "Actually understand your notes",
       description:
-        "Track and manage your project issues with ease using our intuitive interface.",
+        "Whether it's just complex notes or a whole textbook, AI can help break it down for you in seconds.",
       skeleton: <SkeletonOne />,
       className:
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Capture pictures with AI",
+      title: "Get practice questions instantly",
       description:
-        "Capture stunning photos effortlessly using our advanced AI technology.",
+        "Don't walk into an exam unprepared. Whether it's an essay or multiple choice, AI can generate questions for you so all you have to do is practice.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
-      title: "Watch our AI on YouTube",
+      title: "Get instant feedback on your work",
       description:
-        "Whether its you or Tyler Durden, you can get to know about our product on YouTube",
+        "We know answers sometimes aren't enough. Get instant feedback on your work so you can learn from your mistakes.",
       skeleton: <SkeletonThree />,
       className:
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
     {
-      title: "Deploy in seconds",
+      title: "Stay locked in",
       description:
-        "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
+        "With our AI recommend focus playlists and productive timers, you will never lose focus again.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
   ];
   return (
-    <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
+    <div className="relative z-20 py-7 lg:py-28 max-w-7xl mx-auto">
       <div className="px-8">
         <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-          Packed with thousands of features
+          Packed with all the features you need
         </h4>
 
         <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
