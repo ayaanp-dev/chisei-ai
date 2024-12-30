@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from transformers import pipeline
-from ai.summarization.summarization import summarize
-from ai.questions.math_answering import answer_math, prettify_math_answer
+from summarization.summarization import summarize
+from questions.math_answering import answer_math, prettify_math_answer
 
 app = FastAPI()
 
