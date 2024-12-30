@@ -1,1 +1,1 @@
-nextjs + fastapi
+ai study platform
